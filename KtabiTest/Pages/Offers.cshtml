@@ -1,0 +1,13 @@
+﻿@page
+@model KtabiTest.Pages.OffersModel
+@{
+}
+@foreach (var item in Model.Books)
+{
+    <h1>@item.Name</h1>
+    <br />
+    <h1>@item.Author.Name</h1>
+    <br />
+    <h1>@item.User.UserName</h1>
+}
+<h1>@Model.MyProperty</h1>
