@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+GWW1tSVeJF8LEkv3sJajr81Dm6x0e9wSFKOIZe4darRoabDFKI6UYtD6+crWQ2IHN4SgsnUgr6uHln4PUHt5g==",
+  "dgSpecHash": "CaRJboW4DeK28stE5nLs+HDdw3XQZ4mtEdRLOYCQkyMtZdqBttHQ2nD6LsH6SIqStIKmXxZDPdbqEdy4jOA/rw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Peter\\source\\repos\\KtabiTest\\KtabiTest\\KtabiTest.csproj",
+  "projectFilePath": "D:\\MyGitHub-Projects\\KtabiTest\\KtabiTest\\KtabiTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Peter\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Peter\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

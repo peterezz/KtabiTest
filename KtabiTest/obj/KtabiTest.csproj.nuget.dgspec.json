@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Peter\\source\\repos\\KtabiTest\\KtabiTest\\KtabiTest.csproj": {}
+    "D:\\MyGitHub-Projects\\KtabiTest\\KtabiTest\\KtabiTest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Peter\\source\\repos\\KtabiTest\\KtabiTest\\KtabiTest.csproj": {
+    "D:\\MyGitHub-Projects\\KtabiTest\\KtabiTest\\KtabiTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Peter\\source\\repos\\KtabiTest\\KtabiTest\\KtabiTest.csproj",
+        "projectUniqueName": "D:\\MyGitHub-Projects\\KtabiTest\\KtabiTest\\KtabiTest.csproj",
         "projectName": "KtabiTest",
-        "projectPath": "C:\\Users\\Peter\\source\\repos\\KtabiTest\\KtabiTest\\KtabiTest.csproj",
+        "projectPath": "D:\\MyGitHub-Projects\\KtabiTest\\KtabiTest\\KtabiTest.csproj",
         "packagesPath": "C:\\Users\\Peter\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Peter\\source\\repos\\KtabiTest\\KtabiTest\\obj\\",
+        "outputPath": "D:\\MyGitHub-Projects\\KtabiTest\\KtabiTest\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Peter\\AppData\\Roaming\\NuGet\\NuGet.Config",
