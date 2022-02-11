@@ -1,0 +1,15 @@
+﻿@page
+@model KtabiTest.Pages.CustomerHomeModel
+@{
+    ViewData["Title"]="HOME";
+    Layout= "CustomerLayout";
+}
+<h2>Customer body</h2>
+@{  
+
+await Html.RenderPartialAsync("Partials/Offer_Partial");
+}
+<h2>some content</h2>
+@{ 
+    await Html.RenderPartialAsync("Partials/Book_Partial");
+}
