@@ -14,60 +14,49 @@
    "SelectedToBeGenerated": 0,
    "Tables": [
       {
-         "Name": "[dbo].[AspNetRoleClaims]",
+         "Name": "[dbo].[Classes]",
          "ObjectType": 0
       },
       {
-         "Name": "[dbo].[AspNetRoles]",
+         "Name": "[dbo].[CourseAppointment]",
          "ObjectType": 0
       },
       {
-         "Name": "[dbo].[AspNetUserClaims]",
+         "Name": "[dbo].[Courses]",
          "ObjectType": 0
       },
       {
-         "Name": "[dbo].[AspNetUserLogins]",
+         "Name": "[dbo].[Student]",
          "ObjectType": 0
       },
       {
-         "Name": "[dbo].[AspNetUserRoles]",
+         "Name": "[dbo].[Student_Course]",
          "ObjectType": 0
       },
       {
-         "Name": "[dbo].[AspNetUsers]",
+         "Name": "[dbo].[StudentName]",
          "ObjectType": 0
       },
       {
-         "Name": "[dbo].[AspNetUserTokens]",
+         "Name": "[dbo].[StudentPhoneNumber]",
          "ObjectType": 0
       },
       {
-         "Name": "[dbo].[Authors]",
+         "Name": "[dbo].[Teacher]",
          "ObjectType": 0
       },
       {
-         "Name": "[dbo].[Book]",
-         "ObjectType": 0
-      },
-      {
-         "Name": "[dbo].[BookCategory]",
-         "ObjectType": 0
-      },
-      {
-         "Name": "[dbo].[BookCategoryList]",
-         "ObjectType": 0
-      },
-      {
-         "Name": "[dbo].[Deals]",
+         "Name": "[dbo].[User]",
          "ObjectType": 0
       }
    ],
-   "UiHint": "DESKTOP-MQNIHEC.Kitabi",
+   "UiHint": "DESKTOP-MQNIHEC.SMCCSystem",
    "UseBoolPropertiesWithoutDefaultSql": false,
    "UseDatabaseNames": false,
    "UseDbContextSplitting": false,
    "UseFluentApiOnly": true,
    "UseHandleBars": false,
+   "UseHierarchyId": false,
    "UseInflector": false,
    "UseLegacyPluralizer": false,
    "UseManyToManyEntity": false,

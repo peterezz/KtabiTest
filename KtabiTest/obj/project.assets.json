@@ -5803,11 +5803,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\MyGitHub-Projects\\KtabiTest\\KtabiTest\\KtabiTest.csproj",
+      "projectUniqueName": "D:\\MyGitHub-Projects\\1- KitabiTest\\KtabiTest\\KtabiTest\\KtabiTest.csproj",
       "projectName": "KtabiTest",
-      "projectPath": "D:\\MyGitHub-Projects\\KtabiTest\\KtabiTest\\KtabiTest.csproj",
+      "projectPath": "D:\\MyGitHub-Projects\\1- KitabiTest\\KtabiTest\\KtabiTest\\KtabiTest.csproj",
       "packagesPath": "C:\\Users\\Peter\\.nuget\\packages\\",
-      "outputPath": "D:\\MyGitHub-Projects\\KtabiTest\\KtabiTest\\obj\\",
+      "outputPath": "D:\\MyGitHub-Projects\\1- KitabiTest\\KtabiTest\\KtabiTest\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Peter\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5861,6 +5861,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[3.1.23, 3.1.23]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -5869,7 +5875,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.405\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
       }
     }
   }

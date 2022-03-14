@@ -9,17 +9,17 @@ namespace KtabiTest.Repository
     public class OfferManger
     {
         private readonly KitabiContext dbContext;
-        private BaseRepo<Book> _Rebo;
+        private BaseRepo<CourseAppointment> _Rebo;
         public OfferManger(KitabiContext DbContext)
         {
     
         dbContext = DbContext;
-            _Rebo = new BaseRepo<Book>(DbContext);
+            _Rebo = new BaseRepo<CourseAppointment>(DbContext);
         }
 
-        public IQueryable<Book> getall()
+        public IQueryable<CourseAppointment> getall()
         {
-            var data = _Rebo.GetMany(book=>book.Offer!=null && book.IsActive==true&&book.IsApproved==true,  Book=>Book.Author, Book => Book.User);
+            var data = _Rebo.GetMany(null, appoinment => appoinment.Teacher, appoinment => appoinment.Course);
             return data;
         }
     }

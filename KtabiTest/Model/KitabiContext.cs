@@ -10,239 +10,238 @@ namespace KtabiTest.Model
 {
     public partial class KitabiContext : DbContext
     {
-   
 
         public KitabiContext(DbContextOptions<KitabiContext> options)
             : base(options)
         {
         }
 
-        public virtual DbSet<AspNetRoleClaims> AspNetRoleClaims { get; set; }
-        public virtual DbSet<AspNetRoles> AspNetRoles { get; set; }
-        public virtual DbSet<AspNetUserClaims> AspNetUserClaims { get; set; }
-        public virtual DbSet<AspNetUserLogins> AspNetUserLogins { get; set; }
-        public virtual DbSet<AspNetUserRoles> AspNetUserRoles { get; set; }
-        public virtual DbSet<AspNetUserTokens> AspNetUserTokens { get; set; }
-        public virtual DbSet<AspNetUsers> AspNetUsers { get; set; }
-        public virtual DbSet<Authors> Authors { get; set; }
-        public virtual DbSet<Book> Book { get; set; }
-        public virtual DbSet<BookCategory> BookCategory { get; set; }
-        public virtual DbSet<BookCategoryList> BookCategoryList { get; set; }
-        public virtual DbSet<Deals> Deals { get; set; }
+        public virtual DbSet<Classes> Classes { get; set; }
+        public virtual DbSet<CourseAppointment> CourseAppointment { get; set; }
+        public virtual DbSet<Courses> Courses { get; set; }
+        public virtual DbSet<Student> Student { get; set; }
+        public virtual DbSet<StudentCourse> StudentCourse { get; set; }
+        public virtual DbSet<StudentName> StudentName { get; set; }
+        public virtual DbSet<StudentPhoneNumber> StudentPhoneNumber { get; set; }
+        public virtual DbSet<Teacher> Teacher { get; set; }
+        public virtual DbSet<User> User { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS");
 
-            modelBuilder.Entity<AspNetRoleClaims>(entity =>
+            modelBuilder.Entity<Classes>(entity =>
             {
-                entity.Property(e => e.RoleId)
-                    .IsRequired()
-                    .HasMaxLength(450);
+                entity.HasKey(e => e.ClassId);
 
-                entity.HasOne(d => d.Role)
-                    .WithMany(p => p.AspNetRoleClaims)
-                    .HasForeignKey(d => d.RoleId);
-            });
+                entity.Property(e => e.ClassId).HasColumnName("ClassID");
 
-            modelBuilder.Entity<AspNetRoles>(entity =>
-            {
-                entity.Property(e => e.Name).HasMaxLength(256);
-
-                entity.Property(e => e.NormalizedName).HasMaxLength(256);
-            });
-
-            modelBuilder.Entity<AspNetUserClaims>(entity =>
-            {
-                entity.Property(e => e.UserId)
-                    .IsRequired()
-                    .HasMaxLength(450);
-
-                entity.HasOne(d => d.User)
-                    .WithMany(p => p.AspNetUserClaims)
-                    .HasForeignKey(d => d.UserId);
-            });
-
-            modelBuilder.Entity<AspNetUserLogins>(entity =>
-            {
-                entity.HasKey(e => new { e.LoginProvider, e.ProviderKey });
-
-                entity.Property(e => e.UserId)
-                    .IsRequired()
-                    .HasMaxLength(450);
-
-                entity.HasOne(d => d.User)
-                    .WithMany(p => p.AspNetUserLogins)
-                    .HasForeignKey(d => d.UserId);
-            });
-
-            modelBuilder.Entity<AspNetUserRoles>(entity =>
-            {
-                entity.HasKey(e => new { e.UserId, e.RoleId });
-
-                entity.HasOne(d => d.Role)
-                    .WithMany(p => p.AspNetUserRoles)
-                    .HasForeignKey(d => d.RoleId);
-
-                entity.HasOne(d => d.User)
-                    .WithMany(p => p.AspNetUserRoles)
-                    .HasForeignKey(d => d.UserId);
-            });
-
-            modelBuilder.Entity<AspNetUserTokens>(entity =>
-            {
-                entity.HasKey(e => new { e.UserId, e.LoginProvider, e.Name });
-
-                entity.HasOne(d => d.User)
-                    .WithMany(p => p.AspNetUserTokens)
-                    .HasForeignKey(d => d.UserId);
-            });
-
-            modelBuilder.Entity<AspNetUsers>(entity =>
-            {
-                entity.Property(e => e.Email).HasMaxLength(256);
-
-                entity.Property(e => e.FirstName)
-                    .IsRequired()
-                    .HasMaxLength(30)
-                    .HasDefaultValueSql("(N'')");
-
-                entity.Property(e => e.LastName)
-                    .IsRequired()
-                    .HasMaxLength(30)
-                    .HasDefaultValueSql("(N'')");
-
-                entity.Property(e => e.NormalizedEmail).HasMaxLength(256);
-
-                entity.Property(e => e.NormalizedUserName).HasMaxLength(256);
-
-                entity.Property(e => e.Photo).HasMaxLength(500);
-
-                entity.Property(e => e.UserName).HasMaxLength(256);
-            });
-
-            modelBuilder.Entity<Authors>(entity =>
-            {
-                entity.Property(e => e.DisplayOrder).HasDefaultValueSql("((99))");
-
-                entity.Property(e => e.Name)
-                    .IsRequired()
-                    .HasMaxLength(50);
-
-                entity.Property(e => e.NumberOfBooks).HasComputedColumnSql("([dbo].[GetNumberOfBooks]([Id]))", false);
-
-                entity.Property(e => e.Photo)
+                entity.Property(e => e.ClassName)
                     .IsRequired()
                     .HasMaxLength(50);
             });
 
-            modelBuilder.Entity<Book>(entity =>
+            modelBuilder.Entity<CourseAppointment>(entity =>
             {
-                entity.HasIndex(e => e.UrlName, "IX_Book")
-                    .IsUnique();
+                entity.HasKey(e => e.AppointmentId);
 
-                entity.Property(e => e.AduioUrl).HasMaxLength(50);
+                entity.Property(e => e.AppointmentId).HasColumnName("AppointmentID");
 
-                entity.Property(e => e.BookPhoto)
-                    .IsRequired()
-                    .HasMaxLength(70);
+                entity.Property(e => e.ClassId).HasColumnName("classID");
 
-                entity.Property(e => e.BooksToExchange).HasMaxLength(100);
+                entity.Property(e => e.CourseId).HasColumnName("courseID");
 
-                entity.Property(e => e.Description)
-                    .IsRequired()
-                    .HasMaxLength(1000);
+                entity.Property(e => e.Day1)
+                    .HasMaxLength(50)
+                    .HasColumnName("day1");
 
-                entity.Property(e => e.IsActive)
-                    .IsRequired()
-                    .HasDefaultValueSql("((1))");
+                entity.Property(e => e.Day2)
+                    .HasMaxLength(50)
+                    .HasColumnName("day2");
 
-                entity.Property(e => e.IsApproved)
-                    .IsRequired()
-                    .HasDefaultValueSql("((1))");
+                entity.Property(e => e.Day3)
+                    .HasMaxLength(50)
+                    .HasColumnName("day3");
 
-                entity.Property(e => e.Name)
-                    .IsRequired()
-                    .HasMaxLength(70);
+                entity.Property(e => e.EndDate)
+                    .HasColumnType("date")
+                    .HasColumnName("endDate");
 
-                entity.Property(e => e.PdfUrl).HasMaxLength(50);
+                entity.Property(e => e.EndTime).HasColumnName("endTime");
 
-                entity.Property(e => e.Photo)
-                    .IsRequired()
-                    .HasMaxLength(70);
+                entity.Property(e => e.Price)
+                    .HasColumnType("money")
+                    .HasColumnName("price");
 
-                entity.Property(e => e.Price).HasColumnType("smallmoney");
+                entity.Property(e => e.StartDate)
+                    .HasColumnType("date")
+                    .HasColumnName("startDate");
 
-                entity.Property(e => e.UrlName)
-                    .IsRequired()
-                    .HasMaxLength(70);
+                entity.Property(e => e.StartTime).HasColumnName("startTime");
 
-                entity.Property(e => e.UserId)
-                    .IsRequired()
-                    .HasMaxLength(450);
+                entity.Property(e => e.TeacherId).HasColumnName("teacherID");
 
-                entity.HasOne(d => d.Author)
-                    .WithMany(p => p.Book)
-                    .HasForeignKey(d => d.AuthorId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Book_Authors");
+                entity.HasOne(d => d.Class)
+                    .WithMany(p => p.CourseAppointment)
+                    .HasForeignKey(d => d.ClassId)
+                    .HasConstraintName("FK_CourseAppointment_Classes");
 
-                entity.HasOne(d => d.User)
-                    .WithMany(p => p.Book)
-                    .HasForeignKey(d => d.UserId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Book_AspNetUsers");
+                entity.HasOne(d => d.Course)
+                    .WithMany(p => p.CourseAppointment)
+                    .HasForeignKey(d => d.CourseId)
+                    .HasConstraintName("FK_CourseAppointment_Courses");
+
+                entity.HasOne(d => d.Teacher)
+                    .WithMany(p => p.CourseAppointment)
+                    .HasForeignKey(d => d.TeacherId)
+                    .HasConstraintName("FK_CourseAppointment_Teacher");
             });
 
-            modelBuilder.Entity<BookCategory>(entity =>
+            modelBuilder.Entity<Courses>(entity =>
             {
-                entity.Property(e => e.CategoryName)
-                    .IsRequired()
-                    .HasMaxLength(50);
-            });
+                entity.HasKey(e => e.CourseId);
 
-            modelBuilder.Entity<BookCategoryList>(entity =>
-            {
-                entity.HasKey(e => new { e.BookId, e.CategoryId });
+                entity.Property(e => e.CourseId).HasColumnName("CourseID");
 
-                entity.HasOne(d => d.Book)
-                    .WithMany(p => p.BookCategoryList)
-                    .HasForeignKey(d => d.BookId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_BookCategoryList_Book");
-
-                entity.HasOne(d => d.Category)
-                    .WithMany(p => p.BookCategoryList)
-                    .HasForeignKey(d => d.CategoryId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_BookCategoryList_BookCategory");
-            });
-
-            modelBuilder.Entity<Deals>(entity =>
-            {
-                entity.Property(e => e.BookName)
+                entity.Property(e => e.CourseName)
                     .IsRequired()
                     .HasMaxLength(50);
 
-                entity.Property(e => e.BookPhoto)
-                    .IsRequired()
-                    .HasMaxLength(70);
+                entity.Property(e => e.NumberOfhours).HasColumnName("NumberOFhours");
 
-                entity.Property(e => e.RequestUserId)
-                    .IsRequired()
-                    .HasMaxLength(450);
+                entity.Property(e => e.NumberOflectures).HasColumnName("NumberOFlectures");
+            });
 
-                entity.HasOne(d => d.Book)
-                    .WithMany(p => p.Deals)
-                    .HasForeignKey(d => d.BookId)
+            modelBuilder.Entity<Student>(entity =>
+            {
+                entity.Property(e => e.StudentId)
+                    .ValueGeneratedNever()
+                    .HasColumnName("StudentID");
+
+                entity.Property(e => e.Address)
+                    .HasMaxLength(50)
+                    .HasColumnName("address");
+
+                entity.Property(e => e.ChurchName)
+                    .HasMaxLength(50)
+                    .HasColumnName("churchName");
+
+                entity.Property(e => e.EmailAddress)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.WorkInformation)
+                    .HasMaxLength(100)
+                    .HasColumnName("workInformation");
+
+                entity.HasOne(d => d.StudentNavigation)
+                    .WithOne(p => p.Student)
+                    .HasForeignKey<Student>(d => d.StudentId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Deals_Book");
+                    .HasConstraintName("FK_Student_StudentName");
+            });
 
-                entity.HasOne(d => d.RequestUser)
-                    .WithMany(p => p.Deals)
-                    .HasForeignKey(d => d.RequestUserId)
+            modelBuilder.Entity<StudentCourse>(entity =>
+            {
+                entity.ToTable("Student_Course");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.CourseId).HasColumnName("CourseID");
+
+                entity.Property(e => e.ElBa2i)
+                    .HasColumnType("money")
+                    .HasColumnName("El_Ba2i");
+
+                entity.Property(e => e.ElMdfo3)
+                    .HasColumnType("money")
+                    .HasColumnName("elMdfo3");
+
+                entity.Property(e => e.ElTwki3)
+                    .HasMaxLength(50)
+                    .HasColumnName("El_Twki3");
+
+                entity.Property(e => e.PayDate).HasColumnType("date");
+
+                entity.Property(e => e.StudentId).HasColumnName("StudentID");
+
+                entity.HasOne(d => d.Course)
+                    .WithMany(p => p.StudentCourse)
+                    .HasForeignKey(d => d.CourseId)
+                    .HasConstraintName("FK_Student_Course_CourseAppointment");
+
+                entity.HasOne(d => d.Student)
+                    .WithMany(p => p.StudentCourse)
+                    .HasForeignKey(d => d.StudentId)
+                    .HasConstraintName("FK_Student_Course_StudentName");
+            });
+
+            modelBuilder.Entity<StudentName>(entity =>
+            {
+                entity.HasKey(e => e.StudentId);
+
+                entity.Property(e => e.StudentId).HasColumnName("StudentID");
+
+                entity.Property(e => e.FirstName).HasMaxLength(50);
+
+                entity.Property(e => e.FourthName).HasMaxLength(50);
+
+                entity.Property(e => e.SecondName).HasMaxLength(50);
+
+                entity.Property(e => e.ThirdName).HasMaxLength(50);
+            });
+
+            modelBuilder.Entity<StudentPhoneNumber>(entity =>
+            {
+                entity.HasKey(e => e.StudentId);
+
+                entity.Property(e => e.StudentId)
+                    .ValueGeneratedNever()
+                    .HasColumnName("StudentID");
+
+                entity.Property(e => e.HomeNumber)
+                    .HasMaxLength(11)
+                    .IsUnicode(false)
+                    .HasColumnName("homeNumber");
+
+                entity.Property(e => e.PhoneNumber)
+                    .HasMaxLength(11)
+                    .IsUnicode(false)
+                    .HasColumnName("phoneNumber");
+
+                entity.Property(e => e.Phonenumber2)
+                    .HasMaxLength(11)
+                    .IsUnicode(false)
+                    .HasColumnName("phonenumber2");
+
+                entity.HasOne(d => d.Student)
+                    .WithOne(p => p.StudentPhoneNumber)
+                    .HasForeignKey<StudentPhoneNumber>(d => d.StudentId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Deals_AspNetUsers");
+                    .HasConstraintName("FK_StudentPhoneNumber_StudentName");
+            });
+
+            modelBuilder.Entity<Teacher>(entity =>
+            {
+                entity.Property(e => e.TeacherId).HasColumnName("TeacherID");
+
+                entity.Property(e => e.TeacherName).HasMaxLength(50);
+
+                entity.Property(e => e.TeacherPhoneNumber)
+                    .HasMaxLength(11)
+                    .IsUnicode(false)
+                    .HasColumnName("teacherPhoneNumber");
+            });
+
+            modelBuilder.Entity<User>(entity =>
+            {
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.Name).HasMaxLength(50);
+
+                entity.Property(e => e.Pass)
+                    .HasMaxLength(50)
+                    .HasColumnName("pass");
             });
 
             OnModelCreatingPartial(modelBuilder);

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "r0CT2QAB4HaMh2Yz2ZXKOpPCkHJJh4mx6mhNX7BW96IYZny7o9cbrDQGPGgBl1JEAOTPPsrgRpOmQlHfbOcsRg==",
+  "dgSpecHash": "KD3PlobJzGSBrzg1xxcIS5JuiPinpEcweD5wsFkMRWxhTOLL1XD+aQD31HpKPlBL5AgDeSkEI8LT6URVcxRmhg==",
   "success": true,
-  "projectFilePath": "D:\\MyGitHub-Projects\\KtabiTest\\KtabiTest\\KtabiTest.csproj",
+  "projectFilePath": "D:\\MyGitHub-Projects\\1- KitabiTest\\KtabiTest\\KtabiTest\\KtabiTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Peter\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Peter\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
@@ -100,7 +100,8 @@
     "C:\\Users\\Peter\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\Peter\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Peter\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\Peter\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    "C:\\Users\\Peter\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
+    "C:\\Users\\Peter\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.23\\microsoft.netcore.app.host.win-x64.3.1.23.nupkg.sha512"
   ],
   "logs": []
 }

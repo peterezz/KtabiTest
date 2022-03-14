@@ -13,7 +13,7 @@ namespace KtabiTest.Pages
     {
         private readonly KitabiContext context;
 
-        public IQueryable<Book> Books { get; set; }
+        public IQueryable<CourseAppointment> Books { get; set; }
 
         [BindProperty(SupportsGet =true)]
         public int MyProperty { get; set; }
@@ -28,6 +28,7 @@ namespace KtabiTest.Pages
         }
         public void OnGet()
         {
+            
 
             Books = offer.getall();
         }

@@ -5,13 +5,10 @@ using System.Collections.Generic;
 
 namespace KtabiTest.Model
 {
-    public partial class AspNetRoleClaims
+    public partial class User
     {
         public int Id { get; set; }
-        public string RoleId { get; set; }
-        public string ClaimType { get; set; }
-        public string ClaimValue { get; set; }
-
-        public virtual AspNetRoles Role { get; set; }
+        public string Name { get; set; }
+        public string Pass { get; set; }
     }
 }
